@@ -1,0 +1,30 @@
+{
+  "name": "img",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "base64-stream": "~0.1.3",
+    "cpy-cli": "^1.0.1",
+    "del-cli": "^1.1.0",
+    "gm": "~1.23.0",
+    "gm-base64": "~1.1.1",
+    "pdfkit": "~0.8.3",
+    "ramda": "~0.24.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run clean && npm run build.assets && npm run build.prepare && npm run build.zip",
+    "build.assets": "cpy \"*.json\" \"*.js\" \"./dist\" --parents",
+    "build.prepare": "cpy package.json dist && cd dist && npm i --prod && cd ..",
+    "build.zip": "cd dist && zip -r ../build.zip . && cd ..",
+    "clean": "del-cli .nyc_output coverage dist build.zip"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
