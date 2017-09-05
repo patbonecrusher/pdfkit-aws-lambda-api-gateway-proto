@@ -1,1 +1,2 @@
 ☐ Automate pushing build to S3, and updating the lambda with the new S3.
+☐ Document the whole workflow from the beginning.
