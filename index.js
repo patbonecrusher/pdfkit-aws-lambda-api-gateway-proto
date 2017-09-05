@@ -13,7 +13,7 @@ exports.handler = (event, context, callback) => {
     url: 'https://farm5.staticflickr.com/4347/36617211440_42d47f237a.jpg',
     encoding: null // Prevents Request from converting response to string
   }, function(err, response, body) {
-
+    
     doc.image(body,260, 50,{height:100,width:100});
     
     var finalString = ''; // contains the base64 string

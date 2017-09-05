@@ -10,9 +10,11 @@
     "request": "~2.81.0"
   },
   "devDependencies": {
-    "eslint": "~4.6.1",
     "cpy-cli": "^1.0.1",
-    "del-cli": "^1.1.0"
+    "del-cli": "^1.1.0",
+    "eslint": "~4.6.1",
+    "lambda-local": "~1.4.2",
+    "node-lambda": "~0.11.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -20,7 +22,8 @@
     "build.assets": "cpy \"*.json\" \"*.js\" \"./dist\" --parents",
     "build.prepare": "cpy package.json dist && cd dist && npm i --prod && cd ..",
     "build.zip": "cd dist && zip -r ../build.zip . && cd ..",
-    "clean": "del-cli .nyc_output coverage dist build.zip"
+    "clean": "del-cli .nyc_output coverage dist build.zip",
+    "test:output": "(node scripts/testLambda > /tmp/out.b64 && cat /tmp/out.b64 | base64 -d > /tmp/foo.pdf && open /tmp/foo.pdf)"
   },
   "files": [
     "index.js"

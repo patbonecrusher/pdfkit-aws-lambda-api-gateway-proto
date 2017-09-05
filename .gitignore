@@ -88,3 +88,8 @@ typings/
 
 dist
 build.zip
+
+.env
+deploy.env
+nevent.json
+.lambda
