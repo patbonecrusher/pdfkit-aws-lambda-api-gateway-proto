@@ -1,2 +1,4 @@
 ☐ Automate pushing build to S3, and updating the lambda with the new S3.
 ☐ Document the whole workflow from the beginning.
+☐ Enumerate AWS assumption.
+☐ Add support to API gateway to specify a search query from instagram, and have the document generated contains the images.
